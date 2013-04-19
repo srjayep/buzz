@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George McIntosh"]
   s.date = "2013-04-19"
-  s.description = "TODO: longer description of your gem"
+  s.description = "A growing suite of tools for doing handy admin tasks etc with Spacewalk"
   s.email = "george@georgemcintosh.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "buzz",
+    "buzz.gemspec",
     "conf/.buzz",
     "lib/buzz.rb",
     "lib/channel.rb",
@@ -36,7 +37,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "A command-line interface for Spacewalk/RHN Satellites"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
