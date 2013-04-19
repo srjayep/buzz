@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "buzz"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George McIntosh"]
@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<webmock>, [">= 0"])
       s.add_runtime_dependency(%q<vcr>, [">= 0"])
-      s.add_runtime_dependency(%q<sif>, ["~> 0.0.2"])
+      s.add_runtime_dependency(%q<sif>, ["~> 0.1.0"])
       s.add_runtime_dependency(%q<thor>, [">= 0"])
       s.add_runtime_dependency(%q<rake>, [">= 0"])
       s.add_runtime_dependency(%q<extensions>, [">= 0"])
@@ -56,7 +56,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<webmock>, [">= 0"])
       s.add_dependency(%q<vcr>, [">= 0"])
-      s.add_dependency(%q<sif>, ["~> 0.0.2"])
+      s.add_dependency(%q<sif>, ["~> 0.1.0"])
       s.add_dependency(%q<thor>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<extensions>, [">= 0"])
@@ -66,7 +66,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<webmock>, [">= 0"])
     s.add_dependency(%q<vcr>, [">= 0"])
-    s.add_dependency(%q<sif>, ["~> 0.0.2"])
+    s.add_dependency(%q<sif>, ["~> 0.1.0"])
     s.add_dependency(%q<thor>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<extensions>, [">= 0"])
