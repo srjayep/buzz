@@ -20,40 +20,38 @@ class System < Sif::Loader
     doc = REXML::Document.new(systemid_file)
     systemid = REXML::XPath.first( doc, 'string(//member[* = "system_id"]/value/string)' ).split('-')[1] 
     puts "Delete this system from spacewalk - ID #{systemid}"
-
-    begin
-      key = server.call("auth.login", @username, @password)
-      puts "Using session key #{key}"
-      out = server.call("system.deleteSystems", 
-            key,
-            [systemid.to_i]
-            )
-      puts out
-    rescue XMLRPC::FaultException => e
-      puts "Error:"
-      puts e.faultCode
-      puts e.faultString
-    end
+    delete_systems [systemid.to_i]
+   
   end
 
   desc "Delete specific machine", "Delete the specified system from Spacewalk"
   def delete(systemid)
-    server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
+    
     puts "Delete this system from spacewalk - ID #{systemid}"
+    delete_systems [systemid.to_i]
+   
+  end
 
-    begin
-      key = server.call("auth.login", @username, @password)
-      puts "Using session key #{key}"
-      out = server.call("system.deleteSystems", 
-            key,
-            [systemid.to_i]
+  no_tasks do 
+
+    def delete_systems(system_ids) 
+      server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
+      
+      begin
+        key = server.call("auth.login", @username, @password)
+        puts "Using session key #{key}"
+        out = server.call("system.deleteSystems", 
+              key,
+              system_ids
             )
-      puts out
-    rescue XMLRPC::FaultException => e
-      puts "Error:"
-      puts e.faultCode
-      puts e.faultString
+        puts out
+      rescue XMLRPC::FaultException => e
+        puts "Error:"
+        puts e.faultCode
+        puts e.faultString
+      end 
     end
+
   end
 
 end
