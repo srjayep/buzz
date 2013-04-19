@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'thor'
-require 'extensions/all'
+require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'channel'
 require_relative 'system'
 
