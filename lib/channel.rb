@@ -1,4 +1,6 @@
+
 require 'sif'
+
 require "xmlrpc/client"
 
 class Channel < Sif::Loader

@@ -14,7 +14,7 @@ GEM
     rake (10.0.4)
     rdoc (4.0.1)
       json (~> 1.4)
-    sif (0.0.2)
+    sif (0.1.0)
     thor (0.18.1)
     vcr (2.4.0)
     webmock (1.11.0)
@@ -29,7 +29,7 @@ DEPENDENCIES
   extensions
   jeweler (~> 1.8.4)
   rake
-  sif (~> 0.0.2)
+  sif (~> 0.1.0)
   thor
   vcr
   webmock

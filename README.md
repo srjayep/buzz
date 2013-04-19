@@ -21,6 +21,10 @@ You can point Buzz at other config files using the -c flag
 
     $ buzz system list -c=./other.conf
 
+You can override individual config using the following
+
+    $ buzz system list -h=other.spacewalk.com -u=bob -p=pass2
+
 ## The channel commands
 
 ### Create

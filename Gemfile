@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'webmock'
 gem 'vcr'
-gem 'sif', "~> 0.0.2"
+gem 'sif', "~> 0.1.0"
 gem 'thor'
 gem 'rake'
 gem 'extensions'

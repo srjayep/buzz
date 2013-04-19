@@ -1,11 +1,10 @@
+
 require 'sif'
 require 'rexml/document'
 require 'rexml/xpath'
 require "xmlrpc/client"
 
 class System < Sif::Loader
-
-  config_file '.buzz'
 
   desc "Delete self", "Delete this system from Spacewalk"
   def deleteself
@@ -30,6 +29,12 @@ class System < Sif::Loader
     puts "Delete this system from spacewalk - ID #{systemid}"
     delete_systems [systemid.to_i]
    
+  end
+
+  desc "noop", "nothing"
+  def noop
+    puts "NOOP:"
+    puts "HOST #{@spacewalk_server} #{parent_options} #{@lol}"
   end
 
   desc "List systems", "List all subscribed systems"
