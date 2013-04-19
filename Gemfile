@@ -11,3 +11,9 @@ group :development do
   gem "bundler"
   gem "jeweler", "~> 1.8.4"
 end
+
+group :test do
+  gem 'vcr'
+  gem 'rspec'
+  gem 'aruba'
+end
