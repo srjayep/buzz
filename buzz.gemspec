@@ -5,13 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = "buzz"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George McIntosh"]
   s.date = "2013-04-19"
   s.description = "A growing suite of tools for doing handy admin tasks etc with Spacewalk"
   s.email = "george@georgemcintosh.com"
+  s.executables = ["buzz"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
@@ -24,6 +25,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "bin/buzz",
     "buzz",
     "buzz.gemspec",
     "conf/.buzz",
