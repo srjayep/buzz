@@ -4,7 +4,7 @@ require 'thor'
 require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'channel'
 require_relative 'system'
-require 'sif'
+require_relative 'sif'
 
 class Buzz < Sif::Loader
 
