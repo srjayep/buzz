@@ -5,7 +5,7 @@ require "xmlrpc/client"
 
 class Channel < Sif::Loader
 
-  desc "Regenerate YUM cache", "This call allows you to force the re-generation of the YUM cache for the specified channel"
+  desc "refresh CHANNEL_LABEL", "This call allows you to force the re-generation of the YUM cache for the specified channel"
   def refresh(channel_label)
       server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
       puts "Regenerating YUM cache for #{channel_label}"
@@ -30,7 +30,7 @@ class Channel < Sif::Loader
   option :arch, :aliases => ['-a']
   option :parent, :default => '', :aliases => ['-p']
   option :checksum, :default => 'sha256'
-  desc "Create channel", "Creates a new channel"
+  desc "create CHANNELNAME [options]", "Creates a new channel"
   def create(channel_label)
     server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
     puts "Creating #{channel_label}"
