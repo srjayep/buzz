@@ -6,7 +6,7 @@ require "xmlrpc/client"
 
 class System < Sif::Loader
 
-  desc "Delete self", "Delete this system from Spacewalk"
+  desc "deleteself", "Delete this system from Spacewalk"
   def deleteself
     server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
     systemid_file_path = '/etc/sysconfig/rhn/systemid'
@@ -23,7 +23,7 @@ class System < Sif::Loader
    
   end
 
-  desc "Delete specific machine", "Delete the specified system from Spacewalk"
+  desc "delete SYSTEM_IDe", "Delete the specified system from Spacewalk"
   def delete(systemid)
     
     puts "Delete this system from spacewalk - ID #{systemid}"
@@ -37,7 +37,7 @@ class System < Sif::Loader
     puts "HOST #{@spacewalk_server} #{parent_options} #{@lol}"
   end
 
-  desc "List systems", "List all subscribed systems"
+  desc "list", "List all subscribed systems"
   def list
      server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
       begin
@@ -60,7 +60,7 @@ class System < Sif::Loader
       end 
     end
 
-    desc "List by regex", "list"
+    desc "list_by_regex", "list"
     def list_by_regex(regex)
       
         systems = find_systems_by_regex(regex)
@@ -73,7 +73,7 @@ class System < Sif::Loader
       
     end
 
-    desc "Delete by regex", "Delete all systems whose name matches the regex supplied"
+    desc "delete_by_regex", "Delete all systems whose name matches the regex supplied"
     def delete_by_regex(regex)
       systems_to_delete = find_systems_by_regex regex
       system_ids = systems_to_delete.collect { |system| system['id']}
