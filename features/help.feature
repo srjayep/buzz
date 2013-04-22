@@ -15,3 +15,10 @@ Feature: help is displayed
      buzz help [COMMAND]  # Describe available commands or one specific command
   """
  
+   Scenario: I run buzz without any config
+     Given I have buzz installed
+     When I run `buzz`
+     Then the output should contain:
+     """
+     Unable to find config file /tmp/fakehome/.buzz - can't continue
+     """
