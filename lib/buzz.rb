@@ -27,4 +27,3 @@ class Buzz < Sif::Loader
   end
 end
 
-Buzz.start ARGV

@@ -2,11 +2,12 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../../lib')
 require 'aruba/cucumber'
 require 'fileutils'
 require 'rspec/expectations'
+require 'buzz_main'
+require 'aruba/in_process'
 
 BUZZ_LIB_PATH = File.expand_path(File.join(File.dirname(__FILE__),'..','..','lib'))
 
 Before do
-	puts "HERE"
   @aruba_timeout_seconds = 5
   @original_path = ENV['PATH'].split(File::PATH_SEPARATOR)
   @original_home = ENV['HOME']

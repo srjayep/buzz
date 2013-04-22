@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '204'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 22 Apr 2013 22:49:56 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '171'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>226x66d41857a5f0d65a549bcc8253bd322c</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Mon, 22 Apr 2013 21:49:56 GMT
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.listSystems</methodName><params><param><value><string>226x66d41857a5f0d65a549bcc8253bd322c</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '191'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 22 Apr 2013 22:49:56 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '1037'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>id</name><value><i4>1000010000</i4></value></member>
+
+        <member><name>name</name><value><string>client</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130317T21:07:06</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010001</i4></value></member>
+
+        <member><name>name</name><value><string>spacewalk.elevenware.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130317T21:25:39</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010002</i4></value></member>
+
+        <member><name>name</name><value><string>spacewalk.elevenware.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130420T16:04:37</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value></data></array></value></param></params></methodResponse>'
+    http_version: '1.1'
+  recorded_at: Mon, 22 Apr 2013 21:49:56 GMT
+recorded_with: VCR 2.4.0

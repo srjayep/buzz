@@ -16,4 +16,5 @@ group :test do
   gem 'vcr'
   gem 'rspec'
   gem 'aruba'
+  gem 'fakeweb'
 end

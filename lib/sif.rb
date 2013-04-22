@@ -31,7 +31,6 @@ module Sif
 		       end
 
 		       if ( @@post_config ) 
-		       	  puts "HERE"
 		       	  @@post_config.call self
 		       end
 		       	
