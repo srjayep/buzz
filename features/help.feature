@@ -6,6 +6,7 @@ Feature: help is displayed
 
   Scenario: I run buzz with no arguments at all 
     Given I have buzz installed
+    And the config is "sample_config/complete.yaml"
     When I run `buzz`
     Then the output should contain:
    """
