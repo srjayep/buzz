@@ -1,5 +1,7 @@
 # buzz
 
+[![Build Status](https://travis-ci.org/georgecodes/buzz.png?branch=master)](https://travis-ci.org/georgecodes/buzz)
+
 Buzz is a command-line interface into Spacewalk/RHN Satellite, written in Ruby. It will work with Ruby 1.8, which is the default Ruby on a lot of systems.
 
 ## Introduction
