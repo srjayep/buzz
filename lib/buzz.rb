@@ -26,3 +26,5 @@ class Buzz < Sif::Loader
         x.instance_variable_set "@password", x.options[:password] unless x.options[:password].nil?
   end
 end
+
+Buzz.start ARGV
