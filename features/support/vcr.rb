@@ -8,11 +8,11 @@ VCR.configure do |c|
   c.default_cassette_options = { :record => :new_episodes }
 end
 
-VCR.cucumber_tags do |t|
-  t.tag  '@tag1'
-  t.tags '@tag2', '@tag3'
+#VCR.cucumber_tags do |t|
+#  t.tag  '@tag1'
+#  t.tags '@tag2', '@tag3'
 
   # t.tag  '@tag3', :cassette => :options
-  puts "OPTONS #{t}"
-  t.tags '@tag4', '@tag5'
-end
+ # puts "OPTONS #{t}"
+ # t.tags '@tag4', '@tag5'
+#end

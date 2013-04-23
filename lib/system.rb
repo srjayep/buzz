@@ -39,7 +39,6 @@ class System < Sif::Loader
 
   desc "list", "List all subscribed systems"
   def list
-    puts "FUCKE #{@spacewalk_server}"
      server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
       begin
         key = server.call("auth.login", @username, @password)

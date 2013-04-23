@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'buzz'
+require 'buzz_api'
 
 describe Channel do
   describe "#create" do

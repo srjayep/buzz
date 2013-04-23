@@ -1,0 +1,141 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://scylla/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>george.mcintosh</string></value></param><param><value><string>password</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '217'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 23 Apr 2013 09:57:00 GMT
+      content-type:
+      - text/xml;charset=ISO-8859-1
+      content-length:
+      - '175'
+      set-cookie:
+      - JSESSIONID=E0996D599536B5A733EF243F809BFAE0; Path=/rhn
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>1612800x0e3e184239bdeed4bb90ca056cf58754</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Tue, 23 Apr 2013 09:56:56 GMT
+- request:
+    method: post
+    uri: http://scylla/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.listSystems</methodName><params><param><value><string>1612800x0e3e184239bdeed4bb90ca056cf58754</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '195'
+      connection:
+      - keep-alive
+      cookie:
+      - JSESSIONID=E0996D599536B5A733EF243F809BFAE0
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 23 Apr 2013 09:57:00 GMT
+      content-type:
+      - text/xml;charset=ISO-8859-1
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>id</name><value><i4>1000021207</i4></value></member>
+
+        <member><name>name</name><value><string>AU-ASGR-EM-Test</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130409T16:47:05</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000021206</i4></value></member>
+
+        <member><name>name</name><value><string>AU-ASGR-Mysql-Test</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130409T16:39:04</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000021205</i4></value></member>
+
+        <member><name>name</name><value><string>AU-ASGR-Plato-Test</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130409T16:31:22</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000020574</i4></value></member>
+
+        <member><name>name</name><value><string>augs-unzliab01</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130314T12:12:12</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000020826</i4></value></member>
+
+        <member><name>name</name><value><string>augs-unzliab01</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T10:56:07</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000020608</i4></value></member>
+
+        <member><name>name</name><value><string>augs-unzliab02</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T10:44:56</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000020140</i4></value></member>
+
+        <member><name>name</name><value><string>AusDevlop_RH4</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T05:38:51</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value></data></array></value></param></params></methodResponse>'
+    http_version: '1.1'
+  recorded_at: Tue, 23 Apr 2013 09:56:56 GMT
+recorded_with: VCR 2.4.0
