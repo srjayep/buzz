@@ -24,7 +24,7 @@ module Buzz
               id = system['id']
               name = system['name']
               last_checkin = system['last_checkin'].to_time
-              systems << { :id => id, :name => name, :last_checkin => last_checkin}
+              systems << { :id => "#{id}", :name => "#{name}", :last_checkin => "#{last_checkin}" }
             end
             systems
           rescue XMLRPC::FaultException => e

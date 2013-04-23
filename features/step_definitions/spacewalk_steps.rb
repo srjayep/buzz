@@ -7,5 +7,6 @@ When(/^I call the "(.*?)" method and the cassette "(.*?)" is in place$/) do |met
 end
 
 Then(/^the result contains:$/) do |string|
-  @result.to_s.should include(string) 
+    expected_result = eval(string)
+    @result.should eq(expected_result)
 end
