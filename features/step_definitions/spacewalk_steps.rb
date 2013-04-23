@@ -7,6 +7,6 @@ When(/^I call the "(.*?)" method and the cassette "(.*?)" is in place$/) do |met
 end
 
 Then(/^the result contains:$/) do |string|
-    expected_result = eval(string)
-    @result.should eq(expected_result)
+    expected_result = eval(string).to_json
+    @result.to_json.should eq(expected_result)
 end
