@@ -12,11 +12,8 @@ module Buzz
         end
 
         def list
-          begin
-            response = @spacewalk.call("system.listSystems", 
-               get_key
-            )
             systems = []
+            response = make_call("system.listSystems")
             response.each do |system|
               id = system['id']
               name = system['name']
@@ -24,11 +21,6 @@ module Buzz
               systems << { :id => "#{id}", :name => "#{name}", :last_checkin => "#{last_checkin}" }
             end
             systems
-          rescue XMLRPC::FaultException => e
-            puts "Error:"
-            puts e.faultCode
-            puts e.faultString
-          end 
         end
 
         def deleteself
@@ -47,14 +39,17 @@ module Buzz
         end
 
         def delete_systems(system_ids) 
-        
+          system_ids = system_ids.collect { |id| id.to_i}
+
+          puts "IDS #{system_ids}"
+         
           begin
-            puts "Using session key #{key}"
-            out = server.call("system.deleteSystems", 
-                  get_key,
-                  system_ids
-                )
-            puts out
+           out = @spacewalk.call("system.deleteSystems", 
+              get_key,
+              system_ids
+            )
+            #out = make_call("system.deleteSystems", system_ids)
+            out
           rescue XMLRPC::FaultException => e
             puts "Error:"
             puts e.faultCode

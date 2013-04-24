@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '204'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 23 Apr 2013 01:16:19 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '171'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>293xcf62dc40371ecdec3973839024190be9</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Wed, 24 Apr 2013 09:06:50 GMT
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.deleteSystems</methodName><params><param><value><string>293xcf62dc40371ecdec3973839024190be9</string></value></param><param><value><array><data><value><array><data><value><i4>1000010018</i4></value></data></array></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '328'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 23 Apr 2013 01:16:19 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '380'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><fault><value><struct><member><name>faultCode</name><value><int>-1</int></value></member><member><name>faultString</name><value><string>redstone.xmlrpc.XmlRpcFault:
+        unhandled internal exception: redstone.xmlrpc.XmlRpcArray cannot be cast to
+        java.lang.Integer</string></value></member></struct></value></fault></methodResponse>'
+    http_version: '1.1'
+  recorded_at: Wed, 24 Apr 2013 09:06:50 GMT
+recorded_with: VCR 2.4.0

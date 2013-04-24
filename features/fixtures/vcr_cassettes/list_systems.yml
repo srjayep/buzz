@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: http://scylla/rpc/api
+    uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>george.mcintosh</string></value></param><param><value><string>password</string></value></param></params></methodCall>
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
 
 '
     headers:
@@ -14,7 +14,7 @@ http_interactions:
       content-type:
       - text/xml; charset=utf-8
       content-length:
-      - '217'
+      - '204'
       connection:
       - keep-alive
       accept:
@@ -25,28 +25,26 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 23 Apr 2013 09:57:00 GMT
+      - Tue, 23 Apr 2013 01:14:39 GMT
       content-type:
-      - text/xml;charset=ISO-8859-1
+      - text/xml
       content-length:
-      - '175'
-      set-cookie:
-      - JSESSIONID=E0996D599536B5A733EF243F809BFAE0; Path=/rhn
+      - '171'
       keep-alive:
       - timeout=15, max=400
       connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>1612800x0e3e184239bdeed4bb90ca056cf58754</string></value></param></params></methodResponse>
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>291x4fced64491ef2c8e34032e797bb6c9bc</string></value></param></params></methodResponse>
     http_version: '1.1'
-  recorded_at: Tue, 23 Apr 2013 09:56:56 GMT
+  recorded_at: Wed, 24 Apr 2013 09:05:10 GMT
 - request:
     method: post
-    uri: http://scylla/rpc/api
+    uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.listSystems</methodName><params><param><value><string>1612800x0e3e184239bdeed4bb90ca056cf58754</string></value></param></params></methodCall>
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.listSystems</methodName><params><param><value><string>291x4fced64491ef2c8e34032e797bb6c9bc</string></value></param></params></methodCall>
 
 '
     headers:
@@ -55,11 +53,9 @@ http_interactions:
       content-type:
       - text/xml; charset=utf-8
       content-length:
-      - '195'
+      - '191'
       connection:
       - keep-alive
-      cookie:
-      - JSESSIONID=E0996D599536B5A733EF243F809BFAE0
       accept:
       - ! '*/*'
   response:
@@ -68,74 +64,114 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 23 Apr 2013 09:57:00 GMT
+      - Tue, 23 Apr 2013 01:14:39 GMT
       content-type:
-      - text/xml;charset=ISO-8859-1
+      - text/xml
+      content-length:
+      - '3752'
       keep-alive:
       - timeout=15, max=400
       connection:
       - Keep-Alive
-      transfer-encoding:
-      - chunked
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>id</name><value><i4>1000021207</i4></value></member>
+      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>id</name><value><i4>1000010010</i4></value></member>
 
-        <member><name>name</name><value><string>AU-ASGR-EM-Test</string></value></member>
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
 
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130409T16:47:05</dateTime.iso8601></value></member>
-
-        </struct>
-
-        </value><value><struct><member><name>id</name><value><i4>1000021206</i4></value></member>
-
-        <member><name>name</name><value><string>AU-ASGR-Mysql-Test</string></value></member>
-
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130409T16:39:04</dateTime.iso8601></value></member>
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:36</dateTime.iso8601></value></member>
 
         </struct>
 
-        </value><value><struct><member><name>id</name><value><i4>1000021205</i4></value></member>
+        </value><value><struct><member><name>id</name><value><i4>1000010011</i4></value></member>
 
-        <member><name>name</name><value><string>AU-ASGR-Plato-Test</string></value></member>
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
 
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130409T16:31:22</dateTime.iso8601></value></member>
-
-        </struct>
-
-        </value><value><struct><member><name>id</name><value><i4>1000020574</i4></value></member>
-
-        <member><name>name</name><value><string>augs-unzliab01</string></value></member>
-
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130314T12:12:12</dateTime.iso8601></value></member>
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:39</dateTime.iso8601></value></member>
 
         </struct>
 
-        </value><value><struct><member><name>id</name><value><i4>1000020826</i4></value></member>
+        </value><value><struct><member><name>id</name><value><i4>1000010012</i4></value></member>
 
-        <member><name>name</name><value><string>augs-unzliab01</string></value></member>
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
 
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T10:56:07</dateTime.iso8601></value></member>
-
-        </struct>
-
-        </value><value><struct><member><name>id</name><value><i4>1000020608</i4></value></member>
-
-        <member><name>name</name><value><string>augs-unzliab02</string></value></member>
-
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T10:44:56</dateTime.iso8601></value></member>
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:42</dateTime.iso8601></value></member>
 
         </struct>
 
-        </value><value><struct><member><name>id</name><value><i4>1000020140</i4></value></member>
+        </value><value><struct><member><name>id</name><value><i4>1000010013</i4></value></member>
 
-        <member><name>name</name><value><string>AusDevlop_RH4</string></value></member>
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
 
-        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T05:38:51</dateTime.iso8601></value></member>
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:44</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010014</i4></value></member>
+
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:46</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010015</i4></value></member>
+
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:48</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010016</i4></value></member>
+
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:50</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010017</i4></value></member>
+
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:51</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010018</i4></value></member>
+
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:53</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010019</i4></value></member>
+
+        <member><name>name</name><value><string>localhost.localdomain</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130423T01:11:55</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010001</i4></value></member>
+
+        <member><name>name</name><value><string>spacewalk.elevenware.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130317T21:25:39</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000010002</i4></value></member>
+
+        <member><name>name</name><value><string>spacewalk.elevenware.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130420T16:04:37</dateTime.iso8601></value></member>
 
         </struct>
 
         </value></data></array></value></param></params></methodResponse>'
     http_version: '1.1'
-  recorded_at: Tue, 23 Apr 2013 09:56:56 GMT
+  recorded_at: Wed, 24 Apr 2013 09:05:10 GMT
 recorded_with: VCR 2.4.0

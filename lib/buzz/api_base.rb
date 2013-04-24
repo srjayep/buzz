@@ -16,6 +16,28 @@ module Buzz
           @key
         end
 
+        def make_call(method_name, *args)
+        	puts "ARGS #{args} #{args.class}"
+    	  begin
+    	  	if ( args.length == 0 )
+
+              response = @spacewalk.call(method_name,
+                get_key
+              )
+            else 
+              response = @spacewalk.call(method_name,
+              	get_key,
+              	args
+              	)
+             end
+          response
+          rescue XMLRPC::FaultException => e
+            puts "Error:"
+            puts e.faultCode
+            puts e.faultString
+          end 
+        end
+
     end
   end
 end
