@@ -23,7 +23,7 @@ class System < Sif::Loader
    
   end
 
-  desc "delete SYSTEM_IDe", "Delete the specified system from Spacewalk"
+  desc "delete SYSTEM_ID", "Delete the specified system from Spacewalk"
   def delete(systemid)
     
     puts "Delete this system from spacewalk - ID #{systemid}"

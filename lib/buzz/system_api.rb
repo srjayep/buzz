@@ -1,23 +1,20 @@
 require 'rexml/document'
 require 'rexml/xpath'
-require "xmlrpc/client"
+
+require 'buzz/api_base'
 
 module Buzz
   module Api
-    class System
+    class System < ApiBase
 
         def initialize(server, username, password)
-          @server = server
-          @username = username
-          @password = password
+          super(server, username, password)
         end
 
         def list
-          server = XMLRPC::Client.new(@server, "/rpc/api", 80)
           begin
-            key = server.call("auth.login", @username, @password)
-            response = server.call("system.listSystems", 
-               key
+            response = @spacewalk.call("system.listSystems", 
+               get_key
             )
             systems = []
             response.each do |system|
@@ -31,8 +28,39 @@ module Buzz
             puts "Error:"
             puts e.faultCode
             puts e.faultString
-        end 
-      end
+          end 
+        end
+
+        def deleteself
+          systemid_file_path = '/etc/sysconfig/rhn/systemid'
+          systemid_file_path = './systemid.xml'
+          if (!File.exists?(systemid_file_path))
+            puts "Cannot find system ID file - exiting"
+            exit -1
+          end
+          systemid_file = File.read systemid_file_path 
+          doc = REXML::Document.new(systemid_file)
+          systemid = REXML::XPath.first( doc, 'string(//member[* = "system_id"]/value/string)' ).split('-')[1] 
+          puts "Delete this system from spacewalk - ID #{systemid}"
+          delete_systems [systemid.to_i]
+         
+        end
+
+        def delete_systems(system_ids) 
+        
+          begin
+            puts "Using session key #{key}"
+            out = server.call("system.deleteSystems", 
+                  get_key,
+                  system_ids
+                )
+            puts out
+          rescue XMLRPC::FaultException => e
+            puts "Error:"
+            puts e.faultCode
+            puts e.faultString
+          end 
+        end
 
     end
   end
