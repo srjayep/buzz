@@ -42,11 +42,11 @@ module Buzz
           system_ids = system_ids.collect { |id| id.to_i}
          
           begin
-           out = @spacewalk.call("system.deleteSystems", 
-              get_key,
-              system_ids
-            )
-            #out = make_call("system.deleteSystems", system_ids)
+           #out = @spacewalk.call("system.deleteSystems", 
+           #   get_key,
+           #   system_ids
+           # )
+            out = make_call("system.deleteSystems", system_ids)
             out
           rescue XMLRPC::FaultException => e
             puts "Error:"
