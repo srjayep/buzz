@@ -3,6 +3,7 @@ require 'aruba/cucumber'
 require 'fileutils'
 require 'rspec/expectations'
 require 'buzz/system_api'
+require 'buzz/channel_api'
 require 'aruba/in_process'
 
 BUZZ_LIB_PATH = File.expand_path(File.join(File.dirname(__FILE__),'..','..','lib'))

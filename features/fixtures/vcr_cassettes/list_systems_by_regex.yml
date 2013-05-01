@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: http://scylla/rpc/api
+    uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>george.mcintosh</string></value></param><param><value><string>password</string></value></param></params></methodCall>
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
 
 '
     headers:
@@ -43,7 +43,7 @@ http_interactions:
   recorded_at: Wed, 01 May 2013 13:14:56 GMT
 - request:
     method: post
-    uri: http://scylla/rpc/api
+    uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
       string: ! '<?xml version="1.0" ?><methodCall><methodName>system.searchByName</methodName><params><param><value><string>1664343x4b4779ffcf1b0d827290fe801d6e2182</string></value></param><param><value><string>^store3</string></value></param></params></methodCall>

@@ -22,32 +22,10 @@ module Buzz
 
         end
 
-        def deleteself
-          systemid_file_path = '/etc/sysconfig/rhn/systemid'
-          systemid_file_path = './systemid.xml'
-          if (!File.exists?(systemid_file_path))
-            puts "Cannot find system ID file - exiting"
-            exit -1
-          end
-          systemid_file = File.read systemid_file_path 
-          doc = REXML::Document.new(systemid_file)
-          systemid = REXML::XPath.first( doc, 'string(//member[* = "system_id"]/value/string)' ).split('-')[1] 
-          puts "Delete this system from spacewalk - ID #{systemid}"
-          delete_systems [systemid.to_i]
-         
-        end
-
         def delete_systems(system_ids) 
-          system_ids = system_ids.collect { |id| id.to_i}
-         
-          begin
-            out = make_call("system.deleteSystems", system_ids)
-            out
-          rescue XMLRPC::FaultException => e
-            puts "Error:"
-            puts e.faultCode
-            puts e.faultString
-          end 
+          system_ids = system_ids.collect { |id| id.to_i} if system_ids.respond_to?('collect')
+          out = make_call("system.deleteSystems", system_ids)
+          out 
         end
 
         private

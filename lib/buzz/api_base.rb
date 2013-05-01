@@ -17,7 +17,7 @@ module Buzz
         end
 
         def make_call(method_name, *args)
-        	puts "ARGS #{args} #{args.class}"
+        	
     	  begin
     	  	if ( args.length == 0 )
 
@@ -26,6 +26,7 @@ module Buzz
               )
             else 
               args.unshift(get_key)
+             
               response = @spacewalk.call(method_name,
               
               	*args

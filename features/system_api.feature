@@ -5,6 +5,7 @@ Feature: A set of API calls relating to Spacewalk systems
 
   Scenario: Listing systems
     Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
+    And wish to use the "System" API
     When I call the "list" method and the cassette "list_systems" is in place
     Then the result contains the array: 
     """
@@ -13,6 +14,7 @@ Feature: A set of API calls relating to Spacewalk systems
 
   Scenario: Deleting a system by ID
     Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
+    And wish to use the "System" API
     When I call the "delete_systems" method with the arguments "1000021466" and the cassette "delete_system" is in place
     Then the result contains:
     """
@@ -20,7 +22,8 @@ Feature: A set of API calls relating to Spacewalk systems
     """
 
   Scenario: Listing systems by regex
-    Given I have provided username "george.mcintosh" password "password" and server "scylla"
+    Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
+    And wish to use the "System" API
     When I call the "list_by_regex" method with the arguments "^store3" and the cassette "list_systems_by_regex" is in place
     Then the result contains the array:
     """

@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '217'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 01 May 2013 14:53:54 GMT
+      content-type:
+      - text/xml;charset=ISO-8859-1
+      content-length:
+      - '175'
+      set-cookie:
+      - JSESSIONID=9265DFB1EC362ADB452377614A7364AD; Path=/rhn
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>1665209xa54c21fd8581ddc7a326f9664944c323</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Wed, 01 May 2013 14:53:58 GMT
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>channel.software.regenerateYumCache</methodName><params><param><value><string>1665209xa54c21fd8581ddc7a326f9664944c323</string></value></param><param><value><string>my-awesome-channel</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '301'
+      connection:
+      - keep-alive
+      cookie:
+      - JSESSIONID=9265DFB1EC362ADB452377614A7364AD
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 01 May 2013 14:53:54 GMT
+      content-type:
+      - text/xml;charset=ISO-8859-1
+      content-length:
+      - '128'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><i4>1</i4></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Wed, 01 May 2013 14:53:58 GMT
+recorded_with: VCR 2.4.0
