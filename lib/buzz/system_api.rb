@@ -17,7 +17,7 @@ module Buzz
             response.each do |system|
               id = system['id']
               name = system['name']
-              last_checkin = system['last_checkin'].to_time
+              last_checkin = system['last_checkin'].to_time.ctime
               systems << { :id => "#{id}", :name => "#{name}", :last_checkin => "#{last_checkin}" }
             end
             systems

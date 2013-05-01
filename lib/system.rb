@@ -68,7 +68,7 @@ class System < Sif::Loader
         systems.each do |system|
           id = system['id']
           name = system['name']
-          last_checkin = system['last_checkin'].to_time
+          last_checkin = system['last_checkin'].to_time.ctime
           puts "System: ID: #{id} name: #{name} last checked in: #{last_checkin}"
         end
       
