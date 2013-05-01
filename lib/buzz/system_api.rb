@@ -12,15 +12,14 @@ module Buzz
         end
 
         def list
-            systems = []
             response = make_call("system.listSystems")
-            response.each do |system|
-              id = system['id']
-              name = system['name']
-              last_checkin = system['last_checkin'].to_time.ctime
-              systems << { :id => "#{id}", :name => "#{name}", :last_checkin => "#{last_checkin}" }
-            end
-            systems
+            parse_system_list(response)
+        end
+
+        def list_by_regex(regex)
+            response = make_call("system.searchByName", regex)
+            parse_system_list(response)
+
         end
 
         def deleteself
@@ -42,10 +41,6 @@ module Buzz
           system_ids = system_ids.collect { |id| id.to_i}
          
           begin
-           #out = @spacewalk.call("system.deleteSystems", 
-           #   get_key,
-           #   system_ids
-           # )
             out = make_call("system.deleteSystems", system_ids)
             out
           rescue XMLRPC::FaultException => e
@@ -53,6 +48,18 @@ module Buzz
             puts e.faultCode
             puts e.faultString
           end 
+        end
+
+        private
+        def parse_system_list(response)
+          systems = []
+          response.each do |system|
+            id = system['id']
+            name = system['name']
+            last_checkin = system['last_checkin'].to_time.ctime
+            systems << { :id => "#{id}", :name => "#{name}", :last_checkin => "#{last_checkin}" }
+          end
+          systems
         end
 
     end

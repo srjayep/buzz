@@ -25,9 +25,10 @@ module Buzz
                 get_key
               )
             else 
+              args.unshift(get_key)
               response = @spacewalk.call(method_name,
-              	get_key,
-              	args
+              
+              	*args
               	)
              end
           response

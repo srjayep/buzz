@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://scylla/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>george.mcintosh</string></value></param><param><value><string>password</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '217'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 01 May 2013 13:14:55 GMT
+      content-type:
+      - text/xml;charset=ISO-8859-1
+      content-length:
+      - '175'
+      set-cookie:
+      - JSESSIONID=78C404894E5A8D8F249F1D905952D2F1; Path=/rhn
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>1664343x4b4779ffcf1b0d827290fe801d6e2182</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Wed, 01 May 2013 13:14:56 GMT
+- request:
+    method: post
+    uri: http://scylla/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.searchByName</methodName><params><param><value><string>1664343x4b4779ffcf1b0d827290fe801d6e2182</string></value></param><param><value><string>^store3</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '250'
+      connection:
+      - keep-alive
+      cookie:
+      - JSESSIONID=78C404894E5A8D8F249F1D905952D2F1
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 01 May 2013 13:14:55 GMT
+      content-type:
+      - text/xml;charset=ISO-8859-1
+      content-length:
+      - '1374'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>id</name><value><i4>1000021430</i4></value></member>
+
+        <member><name>name</name><value><string>store3.eng.uk.specsavers.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130422T12:57:58</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000021494</i4></value></member>
+
+        <member><name>name</name><value><string>store3.eng.uk.specsavers.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130424T13:15:09</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000021418</i4></value></member>
+
+        <member><name>name</name><value><string>store3.eng.uk.specsavers.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130419T16:46:16</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value><value><struct><member><name>id</name><value><i4>1000021563</i4></value></member>
+
+        <member><name>name</name><value><string>store3.eng.uk.specsavers.com</string></value></member>
+
+        <member><name>last_checkin</name><value><dateTime.iso8601>20130501T12:59:36</dateTime.iso8601></value></member>
+
+        </struct>
+
+        </value></data></array></value></param></params></methodResponse>'
+    http_version: '1.1'
+  recorded_at: Wed, 01 May 2013 13:15:00 GMT
+recorded_with: VCR 2.4.0

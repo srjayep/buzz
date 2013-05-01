@@ -18,3 +18,11 @@ Feature: A set of API calls relating to Spacewalk systems
     """
     1
     """
+
+  Scenario: Listing systems by regex
+    Given I have provided username "george.mcintosh" password "password" and server "scylla"
+    When I call the "list_by_regex" method with the arguments "^store3" and the cassette "list_systems_by_regex" is in place
+    Then the result contains:
+    """
+    [{:id=>"1000021430", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Mon Apr 22 12:57:58 2013"}, {:id=>"1000021494", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Wed Apr 24 13:15:09 2013"}, {:id=>"1000021418", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Fri Apr 19 16:46:16 2013"}, {:id=>"1000021563", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Wed May  1 12:59:36 2013"}]
+    """
