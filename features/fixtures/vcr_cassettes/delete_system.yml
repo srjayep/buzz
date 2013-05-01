@@ -14,7 +14,7 @@ http_interactions:
       content-type:
       - text/xml; charset=utf-8
       content-length:
-      - '204'
+      - '217'
       connection:
       - keep-alive
       accept:
@@ -25,26 +25,28 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 23 Apr 2013 01:16:19 GMT
+      - Wed, 01 May 2013 11:32:42 GMT
       content-type:
-      - text/xml
+      - text/xml;charset=ISO-8859-1
       content-length:
-      - '171'
+      - '175'
+      set-cookie:
+      - JSESSIONID=577FB4B22072EABD07B9F608B5D7CA8A; Path=/rhn
       keep-alive:
       - timeout=15, max=400
       connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>293xcf62dc40371ecdec3973839024190be9</string></value></param></params></methodResponse>
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>1664321x77235c35e15b4c025afdcd959914a5c3</string></value></param></params></methodResponse>
     http_version: '1.1'
-  recorded_at: Wed, 24 Apr 2013 09:06:50 GMT
+  recorded_at: Wed, 01 May 2013 11:32:45 GMT
 - request:
     method: post
     uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.deleteSystems</methodName><params><param><value><string>293xcf62dc40371ecdec3973839024190be9</string></value></param><param><value><array><data><value><array><data><value><i4>1000010018</i4></value></data></array></value></data></array></value></param></params></methodCall>
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>system.deleteSystems</methodName><params><param><value><string>1664321x77235c35e15b4c025afdcd959914a5c3</string></value></param><param><value><array><data><value><i4>1000021466</i4></value></data></array></value></param></params></methodCall>
 
 '
     headers:
@@ -53,9 +55,11 @@ http_interactions:
       content-type:
       - text/xml; charset=utf-8
       content-length:
-      - '328'
+      - '289'
       connection:
       - keep-alive
+      cookie:
+      - JSESSIONID=577FB4B22072EABD07B9F608B5D7CA8A
       accept:
       - ! '*/*'
   response:
@@ -64,20 +68,18 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 23 Apr 2013 01:16:19 GMT
+      - Wed, 01 May 2013 11:32:42 GMT
       content-type:
-      - text/xml
+      - text/xml;charset=ISO-8859-1
       content-length:
-      - '380'
+      - '128'
       keep-alive:
       - timeout=15, max=400
       connection:
       - Keep-Alive
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><fault><value><struct><member><name>faultCode</name><value><int>-1</int></value></member><member><name>faultString</name><value><string>redstone.xmlrpc.XmlRpcFault:
-        unhandled internal exception: redstone.xmlrpc.XmlRpcArray cannot be cast to
-        java.lang.Integer</string></value></member></struct></value></fault></methodResponse>'
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><i4>1</i4></value></param></params></methodResponse>
     http_version: '1.1'
-  recorded_at: Wed, 24 Apr 2013 09:06:50 GMT
+  recorded_at: Wed, 01 May 2013 11:32:45 GMT
 recorded_with: VCR 2.4.0

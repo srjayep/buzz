@@ -40,8 +40,6 @@ module Buzz
 
         def delete_systems(system_ids) 
           system_ids = system_ids.collect { |id| id.to_i}
-
-          puts "IDS #{system_ids}"
          
           begin
            out = @spacewalk.call("system.deleteSystems", 

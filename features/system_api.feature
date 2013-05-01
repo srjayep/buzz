@@ -13,7 +13,7 @@ Feature: A set of API calls relating to Spacewalk systems
 
   Scenario: Deleting a system by ID
     Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
-    When I call the "delete_systems" method with the arguments "1000010018" and the cassette "delete_system" is in place
+    When I call the "delete_systems" method with the arguments "1000021466" and the cassette "delete_system" is in place
     Then the result contains:
     """
     1
