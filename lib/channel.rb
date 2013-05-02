@@ -2,27 +2,18 @@
 require 'sif'
 
 require "xmlrpc/client"
+require_relative 'buzz/channel_api'
 
 class Channel < Sif::Loader
 
   desc "refresh CHANNEL_LABEL", "This call allows you to force the re-generation of the YUM cache for the specified channel"
   def refresh(channel_label)
-      server = XMLRPC::Client.new(@spacewalk_server, "/rpc/api", 80)
+
       puts "Regenerating YUM cache for #{channel_label}"
-     
-      begin
-        key = server.call("auth.login", @username, @password)
-        puts "Using session key #{key}"
-        out = server.call("channel.software.regenerateYumCache", 
-              key,
-              channel_label
-              )
-        puts out
-      rescue XMLRPC::FaultException => e
-        puts "Error:"
-        puts e.faultCode
-        puts e.faultString
-      end
+      channel_api = Buzz::Api::Channel.new(@spacewalk_server, @username, @password)
+      response = channel_api.refresh_channel(channel_label)
+      puts "RES #{response}"
+      
   end 
 
   option :name, :aliases => ['-n']

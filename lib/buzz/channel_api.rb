@@ -1,7 +1,7 @@
 require 'rexml/document'
 require 'rexml/xpath'
 
-require 'buzz/api_base'
+require_relative 'api_base'
 
 module Buzz
   module Api

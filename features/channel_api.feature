@@ -13,3 +13,4 @@ Feature: A set of API calls relating to Spacewalk channels
     """
     1
     """
+

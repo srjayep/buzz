@@ -6,7 +6,7 @@ require_relative 'channel'
 require_relative 'system'
 require_relative 'sif'
 
-class Buzz < Sif::Loader
+class BuzzLoader < Sif::Loader
 
   config_file '.buzz'
 
