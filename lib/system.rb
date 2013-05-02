@@ -3,6 +3,7 @@ require 'sif'
 require 'rexml/document'
 require 'rexml/xpath'
 require "xmlrpc/client"
+require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'buzz/system_api'
 
 class System < Sif::Loader

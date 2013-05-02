@@ -2,6 +2,7 @@
 require 'sif'
 
 require "xmlrpc/client"
+require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'buzz/channel_api'
 
 class Channel < Sif::Loader
@@ -13,7 +14,7 @@ class Channel < Sif::Loader
       channel_api = Buzz::Api::Channel.new(@spacewalk_server, @username, @password)
       response = channel_api.refresh_channel(channel_label)
       puts "RES #{response}"
-      
+
   end 
 
   option :name, :aliases => ['-n']

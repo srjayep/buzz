@@ -1,6 +1,6 @@
 require 'rexml/document'
 require 'rexml/xpath'
-
+require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'api_base'
 
 module Buzz

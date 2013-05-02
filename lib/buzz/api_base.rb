@@ -1,4 +1,5 @@
 require "xmlrpc/client"
+require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 
 module Buzz
   module Api
