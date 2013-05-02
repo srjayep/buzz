@@ -25,7 +25,7 @@ class System < Sif::Loader
   end
 
   desc "delete SYSTEM_ID", "Delete the specified system from Spacewalk"
-  def delete(systemid)
+  def delete(*systemid)
     
     puts "Delete this system from spacewalk - ID #{systemid}"
     system_api = Buzz::Api::System.new(@spacewalk_server, @username, @password)
