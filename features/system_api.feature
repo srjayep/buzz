@@ -3,9 +3,11 @@ Feature: A set of API calls relating to Spacewalk systems
   In order to manage registered systems
   I want to use the buzz API
 
+Background: I configure the library
+   Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
+   And want to use the "System" API
+
   Scenario: Listing systems
-    Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
-    And wish to use the "System" API
     When I call the "list" method and the cassette "list_systems" is in place
     Then the result contains the array: 
     """
@@ -13,8 +15,6 @@ Feature: A set of API calls relating to Spacewalk systems
     """
 
   Scenario: Deleting a system by ID
-    Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
-    And wish to use the "System" API
     When I call the "delete_systems" method with the arguments "1000021466" and the cassette "delete_system" is in place
     Then the result contains:
     """
@@ -22,9 +22,7 @@ Feature: A set of API calls relating to Spacewalk systems
     """
 
   Scenario: Listing systems by regex
-    Given I have provided username "admin" password "admin" and server "spacewalk.elevenware.com"
-    And wish to use the "System" API
-    When I call the "list_by_regex" method with the arguments "^store3" and the cassette "list_systems_by_regex" is in place
+   When I call the "list_by_regex" method with the arguments "^store3" and the cassette "list_systems_by_regex" is in place
     Then the result contains the array:
     """
     [{:id=>"1000021430", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Mon Apr 22 12:57:58 2013"}, {:id=>"1000021494", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Wed Apr 24 13:15:09 2013"}, {:id=>"1000021418", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Fri Apr 19 16:46:16 2013"}, {:id=>"1000021563", :name=>"store3.eng.uk.specsavers.com", :last_checkin=>"Wed May  1 12:59:36 2013"}]

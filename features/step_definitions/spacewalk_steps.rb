@@ -1,11 +1,10 @@
 Given(/^I have provided username "(.*?)" password "(.*?)" and server "(.*?)"$/) do |username, password, server|
-   @system_api = Buzz::Api::System.new(server, username, password)
    @username = username
    @password = password
    @server = server
 end
 
-Given(/^wish to use the "(.*?)" API$/) do |api_name|
+Given(/^want to use the "(.*?)" API$/) do |api_name|
   clazz = eval("Buzz::Api::#{api_name}")
   @api = clazz.new(@server, @username, @password)
 end
