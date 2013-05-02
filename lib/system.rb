@@ -3,6 +3,7 @@ require 'sif'
 require 'rexml/document'
 require 'rexml/xpath'
 require "xmlrpc/client"
+require_relative 'buzz/system_api'
 
 class System < Sif::Loader
 
@@ -27,7 +28,9 @@ class System < Sif::Loader
   def delete(systemid)
     
     puts "Delete this system from spacewalk - ID #{systemid}"
-    delete_systems [systemid.to_i]
+    system_api = Buzz::Api::System.new(@spacewalk_server, @username, @password)
+    response = system_api.delete_systems(systemid)
+    puts "RESP #{response}"
    
   end
 

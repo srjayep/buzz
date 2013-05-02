@@ -1,7 +1,7 @@
 require 'rexml/document'
 require 'rexml/xpath'
 
-require 'buzz/api_base'
+require_relative 'api_base'
 
 module Buzz
   module Api
@@ -23,7 +23,7 @@ module Buzz
         end
 
         def delete_systems(system_ids) 
-          system_ids = system_ids.collect { |id| id.to_i} if system_ids.respond_to?('collect')
+          system_ids =  system_ids.respond_to?('collect') ? system_ids.collect { |id| id.to_i} : system_ids.to_i
           out = make_call("system.deleteSystems", system_ids)
           out 
         end
