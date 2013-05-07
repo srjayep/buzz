@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "buzz"
-  s.version = "0.0.5"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George McIntosh"]
-  s.date = "2013-04-22"
+  s.date = "2013-05-07"
   s.description = "A growing suite of tools for doing handy admin tasks etc with Spacewalk"
   s.email = "george@georgemcintosh.com"
   s.executables = ["buzz"]
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -29,13 +30,26 @@ Gem::Specification.new do |s|
     "buzz",
     "buzz.gemspec",
     "conf/.buzz",
-    "features/exit.feature",
-    "features/help.feature",
-    "features/step_definitions/terminal_steps.rb",
+    "features/channel_api.feature",
+    "features/fixtures/vcr_cassettes/delete_system.yml",
+    "features/fixtures/vcr_cassettes/list_systems.yml",
+    "features/fixtures/vcr_cassettes/list_systems_by_regex.yml",
+    "features/fixtures/vcr_cassettes/refresh_channel.yml",
+    "features/step_definitions/buzz_steps.rb",
+    "features/step_definitions/spacewalk_steps.rb",
     "features/support/env.rb",
+    "features/support/vcr.rb",
+    "features/system_api.feature",
     "lib/buzz.rb",
+    "lib/buzz/api_base.rb",
+    "lib/buzz/channel_api.rb",
+    "lib/buzz/system_api.rb",
+    "lib/buzz_api.rb",
+    "lib/buzz_main.rb",
     "lib/channel.rb",
+    "lib/sif.rb",
     "lib/system.rb",
+    "sample_config/complete.yaml",
     "spec/channel_spec.rb",
     "spec/spec_helper.rb",
     "test/helper.rb",
