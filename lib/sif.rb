@@ -6,8 +6,16 @@ module Sif
 
 		def initialize(args=[], options={}, config={})
 		    super
-		    load_configuration
+		    if (options[0] == '--version')
+		    	version = Gem.loaded_specs[@@gem_name].version
+		    	rel_date = Gem.loaded_specs[@@gem_name].date.strftime("%A %d %B %Y")
+    			puts "#{@@gem_name } version #{version} (released #{rel_date})"
+    			exit 0
+    		end
+  			load_configuration
 		end
+
+		class_option :version
 		
 		class_option :config, :aliases => ['-c']
 		@@config_file = '.config'
@@ -34,6 +42,10 @@ module Sif
 		       	  @@post_config.call self
 		       end
 		       	
+		    end
+
+		    def self.gem_name(gem_name)
+		    	@@gem_name = gem_name
 		    end
 
 		    def self.config_file(filename)

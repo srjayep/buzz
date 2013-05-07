@@ -9,6 +9,7 @@ require_relative 'sif'
 class BuzzLoader < Sif::Loader
 
   config_file '.buzz'
+  gem_name 'buzz'
 
   class_option :host, :aliases => ['-h']
   class_option :username, :aliases => ['-u']

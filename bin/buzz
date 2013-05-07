@@ -2,5 +2,4 @@
 
 require 'buzz'
 
-Buzz.start(ARGV)
-#BuzzMain.new(ARGV.dup).execute!
+BuzzLoader.start(ARGV)
