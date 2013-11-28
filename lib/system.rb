@@ -51,7 +51,7 @@ class System < Sif::Loader
               key
             )
         systems = []
-        puts "REP #{response}"
+        puts "RESP #{response}"
         response.each do |system|
           id = system['id']
           name = system['name']

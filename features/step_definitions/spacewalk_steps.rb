@@ -19,6 +19,11 @@ When(/^I call the "(.*?)" method with the arguments "(.*?)" and the cassette "(.
   VCR.use_cassette(cassette_name) {  @result = @api.send( method_name, args ) }
 end
 
+When(/^I call the "(.*?)" method with the hash "(.*?)" and the cassette "(.*?)" is in place$/) do |method_name, args, cassette_name|
+  hash_arg = eval(args)
+  VCR.use_cassette(cassette_name) {  @result = @api.send( method_name, hash_arg ) }
+end
+
 Then(/^the result contains:$/) do |expected_result|
     @result.to_s.should eq(expected_result)
 end

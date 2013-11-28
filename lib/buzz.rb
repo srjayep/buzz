@@ -4,6 +4,7 @@ require 'thor'
 require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'channel'
 require_relative 'system'
+require_relative 'activation_key'
 require_relative 'sif'
 
 class BuzzLoader < Sif::Loader
@@ -20,6 +21,9 @@ class BuzzLoader < Sif::Loader
 
   desc "system", "Manipulate Spacewalk systems"
   subcommand "system", System
+
+  desc "activation_key", "Manipulate Spacewalk activation keys"
+  subcommand "activation_key", ActivationKey
 
   further_config do |x|
         x.instance_variable_set "@spacewalk_server", x.options[:host] unless x.options[:host].nil?

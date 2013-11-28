@@ -2,7 +2,11 @@
 
 [![Build Status](https://travis-ci.org/georgecodes/buzz.png?branch=master)](https://travis-ci.org/georgecodes/buzz)
 
-Buzz is a command-line interface into Spacewalk/RHN Satellite, written in Ruby. It will work with Ruby 1.8, which is the default Ruby on a lot of systems.
+Buzz is a command-line interface into Spacewalk/RHN Satellite, written in Ruby. Under the hood, it uses the Spacewalk
+API documented at http://www.spacewalkproject.org/documentation/api/1.9/, but simplifies common tasks through a command
+line interface.
+
+It will work with Ruby 1.8, which is the default Ruby on a lot of systems.
 
 ## Introduction
 
@@ -10,6 +14,7 @@ The buzz command itself has several sub-commands for manipulating different aspe
 
 * channel - for manipulating channels
 * system  - for manipulating systems
+* activation_key - for manipulating activation keys
 
 ## Configuration
 
@@ -78,6 +83,14 @@ Delete all registered systems whose name (hostname) matches the provided regex
     $ buzz system delete_by_regex "^testbox.*"
 
 Will delete all the systems whose hostname begins with testbox. Be careful!
+
+## The activation key commands
+
+### list
+
+List activation keys
+
+    $ buzz activation_key list [-k <KEY REGEX>] [-d <DESCRIPTION REGEX>] [-l <CHANNEL LABEL REGEX>] [-v]
 
 ## Completeness
 

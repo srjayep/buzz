@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '211'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 28 Nov 2013 13:33:05 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '174'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>460333x6edb7fbc0ba07f54b16ddfb802f678fc</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Thu, 28 Nov 2013 13:33:05 GMT
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>activationkey.listActivationKeys</methodName><params><param><value><string>460333x6edb7fbc0ba07f54b16ddfb802f678fc</string></value></param></params></methodCall>
+
+'
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '208'
+      connection:
+      - keep-alive
+      accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 28 Nov 2013 13:33:05 GMT
+      content-type:
+      - text/xml
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>description</name><value><string>Store
+        GB D2 Deployment RHEL6 WS X86</string></value></member>
+
+        <member><name>usage_limit</name><value><i4>0</i4></value></member>
+
+        <member><name>base_channel_label</name><value><string>base</string></value></member>
+
+        <member><name>child_channel_labels</name><value><array><data><value><string>child</string></value></data></array></value></member>
+
+        <member><name>entitlements</name><value><array><data><value><string>monitoring_entitled</string></value><value><string>provisioning_entitled</string></value></data></array></value></member>
+
+        <member><name>server_group_ids</name><value><array><data><value><i4>54</i4></value></data></array></value></member>
+
+        <member><name>package_names</name><value><array><data></data></array></value></member>
+
+        <member><name>packages</name><value><array><data></data></array></value></member>
+
+        <member><name>universal_default</name><value><boolean>0</boolean></value></member>
+
+        <member><name>disabled</name><value><boolean>0</boolean></value></member>
+
+        <member><name>key</name><value><string>2-activation-key</string></value></member>
+
+        </struct>
+
+        </value></data></array></value></param></params></methodResponse>'
+    http_version: '1.1'
+  recorded_at: Thu, 28 Nov 2013 13:33:06 GMT
+recorded_with: VCR 2.4.0

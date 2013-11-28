@@ -20,7 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = "A command-line interface for Spacewalk/RHN Satellites"
   gem.description = "A growing suite of tools for doing handy admin tasks etc with Spacewalk"
   gem.email = "george@georgemcintosh.com"
-  gem.authors = ["George McIntosh"]
+  gem.authors = ["George McIntosh", "Jimmi Dyson"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

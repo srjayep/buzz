@@ -44,7 +44,8 @@ pkg
 
 # For redcar:
 #.redcar
-
+.idea/
+*.iml
 # For rubinius:
 #*.rbc
 systemid.xml
