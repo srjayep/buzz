@@ -28,7 +28,6 @@ Then(/^the result contains:$/) do |expected_result|
     @result.to_s.should eq(expected_result)
 end
 
-
 Then(/^the result contains the array:$/) do |string|
     expected_result = eval(string).to_json
     @result.to_json.should eq(expected_result)
