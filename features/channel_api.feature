@@ -14,3 +14,10 @@ Feature: A set of API calls relating to Spacewalk channels
     1
     """
 
+  Scenario: Repo sync a channel
+    When I call the "sync_repo" method with the arguments "my-awesome-channel" and the cassette "sync_repo" is in place
+    Then the result contains:
+    """
+    1
+    """
+

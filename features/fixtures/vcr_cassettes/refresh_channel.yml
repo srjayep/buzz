@@ -5,9 +5,8 @@ http_interactions:
     uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
-
-'
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
     headers:
       user-agent:
       - XMLRPC::Client (Ruby 1.9.3)
@@ -18,7 +17,7 @@ http_interactions:
       connection:
       - keep-alive
       accept:
-      - ! '*/*'
+      - '*/*'
   response:
     status:
       code: 200
@@ -46,9 +45,8 @@ http_interactions:
     uri: http://spacewalk.elevenware.com/rpc/api
     body:
       encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>channel.software.regenerateYumCache</methodName><params><param><value><string>1665209xa54c21fd8581ddc7a326f9664944c323</string></value></param><param><value><string>my-awesome-channel</string></value></param></params></methodCall>
-
-'
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>channel.software.regenerateYumCache</methodName><params><param><value><string>1665209xa54c21fd8581ddc7a326f9664944c323</string></value></param><param><value><string>my-awesome-channel</string></value></param></params></methodCall>
     headers:
       user-agent:
       - XMLRPC::Client (Ruby 1.9.3)
@@ -61,7 +59,7 @@ http_interactions:
       cookie:
       - JSESSIONID=9265DFB1EC362ADB452377614A7364AD
       accept:
-      - ! '*/*'
+      - '*/*'
   response:
     status:
       code: 200
@@ -82,4 +80,85 @@ http_interactions:
       string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><i4>1</i4></value></param></params></methodResponse>
     http_version: '1.1'
   recorded_at: Wed, 01 May 2013 14:53:58 GMT
-recorded_with: VCR 2.4.0
+- request:
+    method: post
+    uri: http://spacewalk.uk.specsavers.com/rpc/api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>jimmi@ems</string></value></param><param><value><string>password</string></value></param></params></methodCall>
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '211'
+      connection:
+      - keep-alive
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 02 Dec 2013 11:02:18 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '174'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>463811x9c27d088cd9fb1b586171f306f2d697b</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Mon, 02 Dec 2013 11:02:18 GMT
+- request:
+    method: post
+    uri: http://spacewalk.uk.specsavers.com/rpc/api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>channel.software.regenerateYumCache</methodName><params><param><value><string>463811x9c27d088cd9fb1b586171f306f2d697b</string></value></param><param><value><string>my-awesome-channel</string></value></param></params></methodCall>
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '276'
+      connection:
+      - keep-alive
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 02 Dec 2013 11:02:18 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '324'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8"?><methodResponse><fault><value><struct><member><name>faultCode</name><value><int>-210</int></value></member><member><name>faultString</name><value><string>redstone.xmlrpc.XmlRpcFault:
+        No such channel: my-awesome-channel</string></value></member></struct></value></fault></methodResponse>'
+    http_version: '1.1'
+  recorded_at: Mon, 02 Dec 2013 11:02:18 GMT
+recorded_with: VCR 2.8.0

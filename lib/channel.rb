@@ -57,4 +57,20 @@ class Channel < Sif::Loader
     end
   end
 
+  desc "systems CHANNEL_LABEL", "List subscribed systems"
+  def systems(channel_label)
+    puts "Listing systems subscribed to #{channel_label}"
+    api = Buzz::Api::Channel.new(@spacewalk_server, @username, @password)
+    response = api.get_subscribed_systems(channel_label)
+    pp response
+  end
+
+  desc "sync_repo CHANNEL_LABEL", "Trigger immediate repo synchronization"
+  def sync_repo(channel_label)
+    puts "Syncing repositories for #{channel_label}"
+    api = Buzz::Api::Channel.new(@spacewalk_server, @username, @password)
+    response = api.sync_repo(channel_label)
+    puts ( response == 1 ? 'Respository sync triggered' : 'Respository sync failed' )
+  end
+
 end

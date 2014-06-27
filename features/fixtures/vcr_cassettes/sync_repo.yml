@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>auth.login</methodName><params><param><value><string>admin</string></value></param><param><value><string>admin</string></value></param></params></methodCall>
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '211'
+      connection:
+      - keep-alive
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 02 Dec 2013 11:03:08 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '174'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><string>463812x9ca76d1cb5695101cdc3479f6a0c8087</string></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Mon, 02 Dec 2013 11:03:08 GMT
+- request:
+    method: post
+    uri: http://spacewalk.elevenware.com/rpc/api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>channel.software.syncRepo</methodName><params><param><value><string>463812x9ca76d1cb5695101cdc3479f6a0c8087</string></value></param><param><value><string>specsems-engineering-openshift-origin-rhel6-x86_64</string></value></param></params></methodCall>
+    headers:
+      user-agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      content-type:
+      - text/xml; charset=utf-8
+      content-length:
+      - '298'
+      connection:
+      - keep-alive
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 02 Dec 2013 11:03:08 GMT
+      content-type:
+      - text/xml
+      content-length:
+      - '128'
+      keep-alive:
+      - timeout=15, max=400
+      connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><methodResponse><params><param><value><i4>1</i4></value></param></params></methodResponse>
+    http_version: '1.1'
+  recorded_at: Mon, 02 Dec 2013 11:03:08 GMT
+recorded_with: VCR 2.8.0

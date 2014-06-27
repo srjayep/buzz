@@ -25,10 +25,13 @@ class BuzzLoader < Sif::Loader
   desc "activation_key", "Manipulate Spacewalk activation keys"
   subcommand "activation_key", ActivationKey
 
+  desc "package", "Manipulate Spacewalk package"
+  subcommand "package", Package
+
   further_config do |x|
-        x.instance_variable_set "@spacewalk_server", x.options[:host] unless x.options[:host].nil?
-        x.instance_variable_set "@username", x.options[:username] unless x.options[:username].nil?
-        x.instance_variable_set "@password", x.options[:password] unless x.options[:password].nil?
+    x.instance_variable_set "@spacewalk_server", x.options[:host] unless x.options[:host].nil?
+    x.instance_variable_set "@username", x.options[:username] unless x.options[:username].nil?
+    x.instance_variable_set "@password", x.options[:password] unless x.options[:password].nil?
   end
 end
 
