@@ -5,6 +5,7 @@ require 'extensions/kernel' unless Kernel.respond_to? 'require_relative'
 require_relative 'channel'
 require_relative 'system'
 require_relative 'activation_key'
+require_relative 'package'
 require_relative 'sif'
 
 class BuzzLoader < Sif::Loader
@@ -25,7 +26,7 @@ class BuzzLoader < Sif::Loader
   desc "activation_key", "Manipulate Spacewalk activation keys"
   subcommand "activation_key", ActivationKey
 
-  desc "package", "Manipulate Spacewalk package"
+  desc "package", "Manipulate Spacewalk packages"
   subcommand "package", Package
 
   further_config do |x|
