@@ -6,6 +6,7 @@ gem 'sif', "~> 0.1.0"
 gem 'thor'
 gem 'rake'
 gem 'extensions'
+gem 'greenletters'
 
 group :development do
   gem "bundler"
